@@ -7,7 +7,7 @@
     "dev": "ng serve -oat -hmr -e=hmr",
     "build": "ng build",
     "prestart": "ng build --prod",
-    "start": "ts-node src/server.ts",
+    "start": "http-server dist -p 8080 -o",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -26,6 +26,7 @@
     "@angular/router": "^5.0.2",
     "bootstrap": "^4.0.0-beta.2",
     "core-js": "^2.5.1",
+    "http-server": "^0.10.0",
     "ngx-bootstrap": "^2.0.0-beta.8",
     "normalize.css": "^7.0.0",
     "rxjs": "^5.5.2",
