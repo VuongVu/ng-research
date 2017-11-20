@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "dev": "ng serve -oat -hmr -e=hmr",
+    "dev": "ng serve -oat -hmr -e=hmr -open",
     "build": "ng build",
     "prestart": "ng build --prod",
     "start": "ts-node src/server.ts",

@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomeModule',
   },
   {
+    path: 'users',
+    loadChildren: './users/users.module#UsersModule'
+  },
+  {
     path: '**',
     redirectTo: '404',
     pathMatch: 'full',
