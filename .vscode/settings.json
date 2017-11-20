@@ -1,0 +1,12 @@
+{
+  "prettier.typescriptEnable": [
+    "typescript"
+  ],
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+
+  "tslint.alwaysShowRuleFailuresAsWarnings": true,
+  "tslint.alwaysShowStatus": true,
+  "tslint.enable": true
+}
