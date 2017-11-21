@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="card border border-info mt-5 col-12" style="width: 20rem;">
+    <div class="card-body">
+      <div class="form-group row">
+        <label for="userName" class="col-2 col-form-label font-italic">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="userName" [(ngModel)]="name">
+        </div>
+      </div>
+
+      <button (click)="onAddUser(); name.value=''" [disabled]="name.trim().length > 0 ? false : true" class="btn btn-outline-info">Save</button>
+    </div>
+  </div>
+</div>

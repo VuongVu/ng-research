@@ -1,0 +1,8 @@
+<h2>Log messages</h2>
+<button class="btn btn-danger mb-2" (click)="messagesService.clear()">Clear</button>
+<div class="list-group d-flex flex-column align-items-center" *ngIf="messagesService.messages.length > 0">
+  <div class="list-group-item list-group-item-action list-group-item-info p-2" *ngFor="let message of messagesService.messages">
+    <!-- <span class="badge badge-info p-2 mr-2" style="min-width: 35px !important">{{user.id}}</span> -->
+    {{message}}
+  </div>
+</div>
