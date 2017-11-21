@@ -14,7 +14,7 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./user-detail.component.scss'],
 })
 export class UserDetailComponent implements OnInit {
-  user: User;
+  @Input() user: User;
 
   constructor(
     private route: ActivatedRoute,

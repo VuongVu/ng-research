@@ -19,8 +19,6 @@ export class AddUserComponent implements OnInit {
   onAddUser(): void {
     const name = this.name;
 
-    this.usersService
-      .addUser({ name } as User)
-      .subscribe((user) => console.log(`Add ${JSON.stringify(user)} successfully`));
+    this.usersService.addUser({ name } as User).subscribe();
   }
 }

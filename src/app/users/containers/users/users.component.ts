@@ -13,7 +13,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class UsersComponent implements OnInit {
   isAddUser = false;
-  users: Observable<User[]>;
+  users: User[];
 
   constructor(private title: Title, private userService: UsersService) {
     title.setTitle('Angular Awesome | Users');
@@ -24,6 +24,10 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers(): void {
-    this.users = this.userService.getUsers();
+    this.userService.getUsers().subscribe(users => (this.users = users));
+  }
+
+  onDeleteUser(user: User): void {
+    this.userService.deleteUser(user).subscribe();
   }
 }

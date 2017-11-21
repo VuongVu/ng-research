@@ -10,6 +10,7 @@ import { MessagesService } from './services/Messages.service';
 import { UsersComponent } from './containers/users/users.component';
 import { UserDetailComponent } from './containers/user-detail/user-detail.component';
 import { AddUserComponent } from './containers/add-user/add-user.component';
+import { UserSearchComponent } from './containers/user-search/user-search.component';
 import { MessagesComponent } from './containers/messages/messages.component';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { MessagesComponent } from './containers/messages/messages.component';
     UsersComponent,
     UserDetailComponent,
     AddUserComponent,
+    UserSearchComponent,
     MessagesComponent,
   ],
   providers: [UsersService, MessagesService],

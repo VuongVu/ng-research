@@ -26,7 +26,7 @@ export class UsersService {
     return this.http
       .get<User[]>(this.usersUrl)
       .pipe(
-        tap((users: User[]) => this.log('Users fetched')),
+        tap((users: User[]) => this.log('users fetched')),
         catchError(this.handleError('getUsers', [])),
       );
   }
@@ -36,7 +36,7 @@ export class UsersService {
     return this.http
       .get<User>(url)
       .pipe(
-        tap(_ => this.log(`Fetched user with id = ${id}`)),
+        tap(_ => this.log(`fetched user with id = ${id}`)),
         catchError(this.handleError<User>(`getUser with id=${id}`)),
       );
   }
@@ -45,7 +45,7 @@ export class UsersService {
     return this.http
       .post<User>(this.usersUrl, user, httpOptions)
       .pipe(
-        tap(_ => this.log(`Add new user with id=${user.id}`)),
+        tap(_ => this.log(`add new user with id=${user.id}`)),
         catchError(this.handleError<User>('addUser')),
       );
   }
@@ -54,7 +54,7 @@ export class UsersService {
     return this.http
       .put(this.usersUrl, user, httpOptions)
       .pipe(
-        tap(_ => this.log(`Update user with id=${user.id}`)),
+        tap(_ => this.log(`update user with id=${user.id}`)),
         catchError(this.handleError<any>('updateUser')),
       );
   }
@@ -66,8 +66,21 @@ export class UsersService {
     return this.http
       .delete<User>(url, httpOptions)
       .pipe(
-        tap(_ => this.log(`Deleted user with id=${id}`)),
+        tap(_ => this.log(`deleted user with id=${id}`)),
         catchError(this.handleError<User>('deleteUser')),
+      );
+  }
+
+  searchUsers(term: string): Observable<User[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+
+    return this.http
+      .get<User[]>(`${this.usersUrl}/?name=${term}`)
+      .pipe(
+        tap(_ => this.log(`found users matching "${term}"`)),
+        catchError(this.handleError<User[]>('searchUsers', [])),
       );
   }
 
