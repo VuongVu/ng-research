@@ -8,7 +8,8 @@
     "build": "ng build",
     "preprod": "ng build --prod",
     "prod": "http-server dist -p 8080 -o",
-    "start": "node server.js",
+    "start": "http-server dist",
+    "postinstall": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
