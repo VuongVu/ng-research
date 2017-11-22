@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { UsersService } from '../../services/User.service';
 
@@ -10,6 +10,7 @@ import { User } from '../../models/User';
   styleUrls: ['./add-user.component.scss'],
 })
 export class AddUserComponent implements OnInit {
+  @Input() users: User[];
   name = '';
 
   constructor(private usersService: UsersService) {}
@@ -19,6 +20,8 @@ export class AddUserComponent implements OnInit {
   onAddUser(): void {
     const name = this.name;
 
-    this.usersService.addUser({ name } as User).subscribe();
+    this.usersService
+      .addUser({ name } as User)
+      .subscribe(user => this.users.push(user));
   }
 }

@@ -13,11 +13,12 @@
     </div>
     <button (click)="isAddUser = !isAddUser" class="btn btn-outline-success mt-3">Add new user</button>
     <div class="mb-5" style="margin-top: -20px" *ngIf="isAddUser">
-      <app-add-user></app-add-user>
+      <app-add-user [users]="users"></app-add-user>
     </div>
     <div class="mb-5">
       <app-user-search></app-user-search>
     </div>
+    <button class="btn btn-outline-primary mb-5" (click)="onBackToHome()">Back to Home</button>
   </div>
 
   <div class="col">
